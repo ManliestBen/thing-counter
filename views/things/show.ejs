@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Here's the thing!</h1>
+  <span style=<%= `color:${thing.color};background-color:black;` %>>
+    <h2><%= thing.quantity %> <%= thing.thing %></h2>
+  </span>
+  <a href="/things/<%= thing._id %>/edit"><button>Edit</button></a>
+</body>
+</html>

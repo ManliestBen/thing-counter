@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Here are some things</h1>
+  <a href="/things/new">Add some things</a>
+  <ul>
+    <% things.forEach(thing => { %>
+      <li>
+        <form class="form" method="POST" action="/things/<%= thing._id %>?_method=DELETE">
+          <button type="submit">🗑️</button>
+        </form>
+        <%= thing.quantity %> 
+        <span style=<%= `color:${thing.color};background-color:black;` %>>
+          <a style=<%= `color:${thing.color};background-color:black;` %> href="/things/<%= thing._id %>"><%= thing.thing %></a>
+        </span>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
